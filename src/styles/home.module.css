@@ -1,0 +1,9 @@
+/* for pink poster */
+.pinkLink{
+    border:2px solid green;
+    height: 2rem;
+    width: 5rem;
+    position: absolute;
+    top: 15rem;
+    left: 48%;
+}

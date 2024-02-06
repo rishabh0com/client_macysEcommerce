@@ -1,0 +1,11 @@
+.a{
+  font-size: 1.1rem;
+  font-weight:600;
+
+}
+@media all and (max-width: 768px) {
+  /* media  query for mobile devices */
+  .a{
+    font-size: 5px;
+  }
+}
