@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import './App.css'
-import Home from './pages/Home.jsx';
-import InfoText from './sections/home/InfoText.home.jsx';
+import { useState } from "react";
+import "./App.css";
+import AllRoutes from "./routes/AllRoutes.jsx";
+import { UserProvider } from "./contexts/detail.user.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-     <Home/>
-    </>
-  )
+    <UserProvider>
+      <AllRoutes />
+    </UserProvider>
+  );
 }
 
-export default App
+export default App;
