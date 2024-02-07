@@ -3,7 +3,7 @@ import "../../styles/footer.css";
 
 const FooterLower = () => {
   return (
-    <footerLower className="footerLower">
+    <div className="footerLower">
       {/* Insert your footerLower content here */}
       <div className="footerLower-content">
         {/* Example links */}
@@ -25,7 +25,7 @@ const FooterLower = () => {
         <p>&copy; 2023 Macy's Inc. All Rights Reserved.</p>
       </div>
       {/* End of footerLower copyright */}
-    </footerLower>
+    </div>
   );
 };
 
