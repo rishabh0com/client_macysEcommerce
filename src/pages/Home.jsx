@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import MainHomeSection from "../sections/home/Main.home";
 import Footer from "../components/Footer";
-import SignupForm from "./SignUp";
+
 
 export const Home = () => {
   return (

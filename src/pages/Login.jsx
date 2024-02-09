@@ -16,6 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await userLogin(loginDetail);
+    console.log(loginDetail)
     res && alert(res.message)
 
   }
