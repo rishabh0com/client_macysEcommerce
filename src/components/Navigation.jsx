@@ -15,42 +15,42 @@ function Navigation() {
     <div className="main">
       <nav>
         <div>
-          <Link style={menuStyle} to="/shop/women">
+          <Link style={menuStyle} to="/shop?category=women">
             Women
           </Link>
         </div>
         <div>
-          <Link style={menuStyle} to="/shop/men">
+          <Link style={menuStyle} to="/shop?category=men">
             Men
           </Link>
         </div>
         <div>
-          <Link style={menuStyle} to="/shop/kids&baby">
+          <Link style={menuStyle} to="/shop?category=kids">
             Kids & Baby
           </Link>
         </div>
         <div>
-          <Link style={menuStyle} to="/home">
+          <Link style={menuStyle} to="/shop?category=homeware">
             Home
           </Link>
         </div>
         <div>
-          <Link style={menuStyle} to="/shop/shoes">
+          <Link style={menuStyle} to="/shop?subCategory=shoes">
             Shoes
           </Link>
         </div>
         <div>
-          <Link style={menuStyle} to="/shop/handbags&accessories">
+          <Link style={menuStyle} to="/shop?subCategory=handbags">
             Handbags & Accessories
           </Link>
         </div>
         <div>
-          <Link style={menuStyle} to="/shop/jewelry">
+          <Link style={menuStyle} to="/shop?subCategory=jewelry">
             Jewelry
           </Link>
         </div>
         <div>
-          <Link style={saleRed} to="/shop/sale">
+          <Link style={saleRed} to="/shop">
             Sale
           </Link>
         </div>
