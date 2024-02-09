@@ -1,0 +1,68 @@
+/* src/components/SignupForm.css */
+body{
+  max-width: 100%;
+}
+.container {
+  max-width: 100%;
+  width: 40vmax;
+  margin: 0 auto 0 auto;
+  border-radius: 0.3rem;
+  padding: 1.8rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+  justify-content: center;
+}
+
+input {
+  width: 17rem;
+  font-size: 1.2rem;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+
+button:hover {
+  background-color: #030202;
+}
+
+.footer {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.footer a {
+  color: rgb(35, 153, 216);
+  text-decoration: none;
+  text-decoration: underline;
+
+}
+
+.footer a:hover {
+  color: rgb(241, 7, 7);
+}
+
+.statusMessage {
+  background-color: green;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  margin-top: 10.3rem;
+  display: none;
+}
+
+.showStatusMessage {
+  display: block;
+}
