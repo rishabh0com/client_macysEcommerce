@@ -1,7 +1,6 @@
 import React, { useState,useContext } from 'react';
 import styles from '../styles/account.module.css';
 import {UserContext} from "../contexts/detail.user.jsx";
-import Navbar from '../components/Navbar.jsx';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +32,7 @@ const AccountPage = () => {
       <div className={styles.userInfo}>
         <h2 className={styles.name}>{`${firstName}  ${lastName}`}</h2>
         <p>Email: {email}</p>
-        <button onClick={handleClick}>Logout</button>
+        <button className={styles.logout} onClick={handleClick}>Logout</button>
       </div>
       {/* Add additional features, such as editing user info or settings */}
     </div>
