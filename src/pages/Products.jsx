@@ -19,7 +19,10 @@ const Products = () => {
   const [proDataArray, setProData] = useState([]);
 
   const handleClick = (query) => () => {
-    setSearchParams({subCategory:query})
+    const query1 = query.split(" ")[0]
+    const query2 = query.split(" ")[1]
+    setSearchParams({category:query1,subCategory:query2})
+    console.log("queryyyyyyy",query)
   };
 
   useEffect(() => {
@@ -38,38 +41,38 @@ const Products = () => {
         <div className={styles.leftSection}>
           <div className={styles.category}>
             <h2>Men</h2>
-            <p onClick={handleClick("shirts")}>Shirts</p>
-            <p onClick={handleClick("blazers")}>Blazers</p>
-            <p onClick={handleClick("shoes")}>shoes</p>
+            <p onClick={handleClick("men shirts")}>Shirts</p>
+            <p onClick={handleClick("men blazers")}>Blazers</p>
+            <p onClick={handleClick("men shoes")}>shoes</p>
           </div>
           <hr />
           <div className={styles.category}>
             <h2>Women</h2>
-            <p onClick={handleClick("tops")}>Tops</p>
-            <p onClick={handleClick("dresses")}>Dresses</p>
-            <p onClick={handleClick("jeans")}>Jeans</p>
-            <p onClick={handleClick("coats")}>Coats</p>
-            <p onClick={handleClick("jackets")}>Jackets</p>
-            <p onClick={handleClick("jewelry")}>Jewelry</p>
-            <p onClick={handleClick("handbags")}>Handbags</p>
+            <p onClick={handleClick("women tops")}>Tops</p>
+            <p onClick={handleClick("women dresses")}>Dresses</p>
+            <p onClick={handleClick("women jeans")}>Jeans</p>
+            <p onClick={handleClick("women coats")}>Coats</p>
+            <p onClick={handleClick("women jackets")}>Jackets</p>
+            <p onClick={handleClick("women jewelry")}>Jewelry</p>
+            <p onClick={handleClick("women handbags")}>Handbags</p>
           </div>
           <hr />
           <div className={styles.category}>
             <h2>Kids</h2>
-            <p onClick={handleClick("cotton wear")}>Cotton wear</p>
-            <p onClick={handleClick("toys")}>Toys</p>
+            <p onClick={handleClick("kids cottonWear")}>Cotton wear</p>
+            <p onClick={handleClick("kids toys")}>Toys</p>
           </div>
           <hr />
           <div className={styles.category}>
             <h2>Homeware</h2>
-            <p onClick={handleClick("electronics")}>Electronics</p>
-            <p onClick={handleClick("kitchen")}>Kitchen</p>
+            <p onClick={handleClick("homeware electronics")}>Electronics</p>
+            <p onClick={handleClick("homeware kitchen")}>Kitchen</p>
           </div>
           <hr />
           <div className={styles.category}>
             <h2>Accessories</h2>
-            <p onClick={handleClick("")}>Mens's Accessories</p>
-            <p onClick={handleClick("category=wemen&accessories")}>
+            <p onClick={handleClick("men accessories")}>Mens's Accessories</p>
+            <p onClick={handleClick("women accessories")}>
               Women's Accessories
             </p>
           </div>
