@@ -23,3 +23,9 @@
     font-size: 0.8em;
     color: #777;
   }
+
+@media (max-width: 768px) {
+  .userInfo {
+    width: 100%;
+  }
+}

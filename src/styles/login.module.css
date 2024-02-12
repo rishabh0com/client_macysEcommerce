@@ -1,3 +1,6 @@
+body{
+  max-width: 80%;
+}
 .container {
   margin: 0 auto 0 auto;
   text-align: center;
@@ -16,7 +19,7 @@ input {
 }
 
 
-button{
+.bt{
   background-color: rgb(245, 5, 5);
   color: white;
   width: 18.4rem;

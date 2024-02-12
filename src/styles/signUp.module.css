@@ -33,8 +33,20 @@ input {
   border: 1px solid rgb(0, 0, 0);
 }
 
+.bt{
+  background-color: rgb(245, 5, 5);
+  color: white;
+  width: 18.4rem;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 3rem;
+}
 
-button:hover {
+
+
+.bt:hover {
   background-color: #030202;
 }
 
