@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import styles from "../styles/login.module.css";
-import { Link ,useNavigate} from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { Link, useNavigate } from "react-router-dom";
 import { userLogin } from "../controllers/login.user";
 import { UserContext } from "../contexts/detail.user.jsx";
 
@@ -18,17 +17,15 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await userLogin(loginDetail);
-    console.log("in login page",res)
-    if(res.success){
-      setUserDetail({...res.data,access:true})
-    }else{
-      setUserDetail({access:false})
+    console.log("in login page", res);
+    if (res.success) {
+      setUserDetail({ ...res.data, access: true });
+    } else {
+      setUserDetail({ access: false });
     }
-    res && alert(res.message)
-    navigate("/")
-
-  }
-
+    res && alert(res.message);
+    navigate("/");
+  };
 
   return (
     <>
@@ -55,7 +52,9 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
-          <button className={styles.bt} type="submit">Log In</button>
+          <button className={styles.bt} type="submit">
+            Log In
+          </button>
         </form>
         <div className={styles.footer}>
           <p>

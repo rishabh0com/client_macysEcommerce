@@ -2,7 +2,6 @@
 import React, { useContext, useState } from "react";
 import styles from "../styles/signUp.module.css";
 import { Link , useNavigate} from "react-router-dom";
-import Navbar from "../components/Navbar";
 import { register } from "../controllers/signup.user";
 
 const SignupForm = () => {

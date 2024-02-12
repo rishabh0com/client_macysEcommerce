@@ -3,6 +3,7 @@ import styles from '../styles/account.module.css';
 import {UserContext} from "../contexts/detail.user.jsx";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const api = import.meta.env.VITE_API_URL;
 
 
 const AccountPage = () => {
@@ -14,7 +15,7 @@ const AccountPage = () => {
     try {
      localStorage.removeItem("userInfo");
     localStorage.removeItem("access");
-    const res = await axios.get("http://localhost:8080/users/logout",{withCredentials:true});
+    const res = await axios.get(`${api}/users/logout`,{withCredentials:true});
     const resData = await res;
     resData && alert(resData.data.message);
     // window.location.href = "/login";

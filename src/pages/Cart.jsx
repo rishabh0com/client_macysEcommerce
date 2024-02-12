@@ -1,30 +1,23 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/cart.module.css";
 import axios from "axios";
-import { findProductById } from "../controllers/products.controller.js";
 import { useLocation, useNavigate } from "react-router-dom";
+const api = import.meta.env.VITE_API_URL;
 
 const Cart = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [cartsPro, setCartsPro] = useState([]);
 
-  const removeProduct = async (id) => {
-    axios.delete(`http://localhost:8080/cart/delete/${id}`, {
-      withCredentials: true,
-    });
-    // const resData = await res;
-    console.log("clicked");
-  };
 
   useEffect(() => {
     const fetchProducts = async () => {
       if (localStorage.getItem("access")) {
         const { userId } = JSON.parse(localStorage.getItem("userInfo"));
-        const res = axios.get(
-          `http://localhost:8080/cart/find?userId=${userId}`,
-          { withCredentials: true }
-        );
+        const res = axios.get(`${api}/cart/find?userId=${userId}`, {
+          withCredentials: true,
+        });
+        console.log("called")
         const resData = await res;
         setCartsPro(resData.data.data);
       } else {
@@ -79,7 +72,7 @@ const Cart = () => {
                       <button
                         onClick={async () => {
                           const res = await axios.delete(
-                            `http://localhost:8080/cart/delete/${item._id}`,
+                            `${api}/cart/delete/${item._id}`,
                             {
                               withCredentials: true,
                             }

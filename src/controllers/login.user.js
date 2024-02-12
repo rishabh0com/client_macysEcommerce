@@ -1,11 +1,13 @@
 import axios from "axios";
-// import {UserContext} from "../contexts/detail.user";
+const api = import.meta.env.VITE_API_URL;
+
+
 export const userLogin = async (details) => {
     // const {setUserDetail } = useContext(UserContext);
     
     try {
         console.log("in detail", details)
-        const res = await axios.post('http://localhost:8080/users/login', details, {
+        const res = await axios.post(`${api}/users/login`, details, {
             withCredentials: true
         })
         const resData = await res;

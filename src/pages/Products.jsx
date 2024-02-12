@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useLocation , useSearchParams} from "react-router-dom";
 import styles from "../styles/products.module.css";
-import Navbar from "../components/Navbar";
 import SingleProduct from "../components/SingleProduct.jsx";
 import { findAllProducts } from "../controllers/products.controller.js";
 import { UserContext } from "../contexts/detail.user.jsx";
@@ -22,7 +21,7 @@ const Products = () => {
     const query1 = query.split(" ")[0]
     const query2 = query.split(" ")[1]
     setSearchParams({category:query1,subCategory:query2})
-    console.log("queryyyyyyy",query)
+    // console.log("queryyyyyyy",query)
   };
 
   useEffect(() => {

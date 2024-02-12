@@ -5,16 +5,10 @@ import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import logoIcon from "/favicon.png";
 import cartIcom from "../../assets/cartIcon.png";
-import { UserContext } from "../../contexts/detail.user.jsx";
-// 1. Import
-import { HamburgerIcon } from "@chakra-ui/icons";
 
-// 2. Use the `as` prop
 
 function SearchBar() {
-  const { userDetail } = useContext(UserContext);
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
   const access = localStorage.getItem("access");
 
   const handleSubmit = (event) => {

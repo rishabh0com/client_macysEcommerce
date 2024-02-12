@@ -2,8 +2,6 @@ import React, { useEffect, useState, useContext, useRef } from "react";
 import styles from "../styles/product.module.css";
 import { findProductById } from "../controllers/products.controller";
 import { useParams, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import CartBtn from "../components/subComponents/CartBtn";
 import { UserContext } from "../contexts/detail.user";
 
@@ -100,11 +98,9 @@ const ProductDetails = ({ title, price, color, fakeP, sizes, id }) => {
         </div>
         <div className={styles.productSize}>
           <span className={styles.colorLabel}>SIZE :</span> Please select
-          <div className={styles.sizeContainer} >
+          <div className={styles.sizeContainer}>
             {sizes
-              ? sizes.map((ele) => (
-                  <SizeBox size={ele} key={ele} />
-                ))
+              ? sizes.map((ele) => <SizeBox size={ele} key={ele} />)
               : "NO SIZE"}
           </div>
         </div>

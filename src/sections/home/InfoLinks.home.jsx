@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import deskL from "../../assets/desktopLinks.png";
 import phoneL from "../../assets/phoneLinks.png";
 

@@ -1,7 +1,7 @@
 import { useState , useContext, useEffect} from "react";
 import styles from "./App.module.css";
 import AllRoutes from "./routes/AllRoutes.jsx";
-import { UserContext, UserProvider } from "./contexts/detail.user.jsx";
+import { UserContext } from "./contexts/detail.user.jsx";
 import Loader from "./components/subComponents/Loader.jsx";
 import { useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";

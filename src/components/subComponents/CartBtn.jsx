@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../contexts/detail.user.jsx";
-import { useNavigate, useLocation } from "react-router-dom";
 import { findProductById } from "../../controllers/products.controller.js";
+const api = import.meta.env.VITE_API_URL;
 
 const CartBtn = ({ id, qyt }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
   const { loading, setLoading } = useContext(UserContext);
   const productId = id;
   const quantity = qyt;
@@ -21,7 +19,7 @@ const CartBtn = ({ id, qyt }) => {
           console.log("cart", cartProduct.data);
           const product = cartProduct.data;
           const res = await axios.post(
-            `http://localhost:8080/cart/add?userId=${userId}`,
+            `${api}/cart/add?userId=${userId}`,
             { product },
             { withCredentials: true }
           );
@@ -49,7 +47,16 @@ const CartBtn = ({ id, qyt }) => {
     <div>
       <div>
         <button
-          style={{marginTop:"3rem", width: "100%", padding: "1rem", cursor: "pointer",marginTop:"3rem",backgroundColor:"red",border:"none",fontSize:'1.2rem',color:"white"}}
+          style={{
+            width: "100%",
+            padding: "1rem",
+            cursor: "pointer",
+            marginTop: "3rem",
+            backgroundColor: "red",
+            border: "none",
+            fontSize: "1.2rem",
+            color: "white",
+          }}
           onClick={handleClick}>
           Add to bag
         </button>
