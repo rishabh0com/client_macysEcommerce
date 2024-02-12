@@ -1,31 +1,29 @@
 // src/components/SignupForm.js
 import React, { useContext, useState } from "react";
 import styles from "../styles/signUp.module.css";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { UserContext } from "../contexts/detail.user";
+import { register } from "../controllers/signup.user";
 
 const SignupForm = () => {
-  const { userDetail, setUserDetail } = useContext(UserContext);
+  const [ userDetail, setUserDetail ] = useState({})
+  const navigate = useNavigate();
 
-  const validateForm = () => {
-    // Add your validation logic here
-  };
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserDetail({ ...useState, [name]: value });
+    setUserDetail({ ...userDetail, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      // Add your form submission logic here
-    }
+    const res = await register(userDetail);
+    res && alert(res.message)
+    res.success && navigate("/login")
+    console.log("details",userDetail)
   };
 
   return (
     <>
-      <Navbar />
       <div className={styles.container}>
         <div className={styles.formWrapper}>
           <h1>Sign Up</h1>
@@ -40,7 +38,7 @@ const SignupForm = () => {
               />
             </div>
             <div className={styles.inputgroup}>
-              <label>Last Name</label>
+              <label>Last Name*</label>
               <input
                 type="text"
                 id="lastName"
@@ -66,7 +64,7 @@ const SignupForm = () => {
                 onChange={handleChange}
               />
             </div>
-            <button type="submit">Sign up</button>
+            <button className={styles.bt} type="submit">Sign up</button>
           </form>
           <div className={styles.footer}>
             <p>
