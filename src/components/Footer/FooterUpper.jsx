@@ -3,7 +3,6 @@ const FooterUpper = () => {
   return (
     <>
       <footer className="footerUpper">
-        <div className="footerUpper-content">
           <div className="footerUpper-section customer-service">
             <h3>Customer Service</h3>
             <ul>
@@ -41,15 +40,13 @@ const FooterUpper = () => {
               <li>Connect With Us</li>
               <li>Mobile App</li>
             </ul>
-            <div className="social-media">
-              <a href="#">f</a>
-              <a href="#">O</a>
-              <a href="#">X</a>
-              <a href="#">P</a>
-            </div>
           </div>
-        </div>
-        {/* End of footerUpper copyright */}
+          <div className="social-media">
+            <a href="#">f</a>
+            <a href="#">O</a>
+            <a href="#">X</a>
+            <a href="#">P</a>
+          </div>
       </footer>
     </>
   );
