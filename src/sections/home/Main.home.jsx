@@ -15,7 +15,7 @@ const MainHomeSection = () => {
       <RedPoster/>
       <ProductsLinks/>
       <InfoText/>
-      <InfoLinks/>
+        <InfoLinks/>
       </div>
     </div>
   );

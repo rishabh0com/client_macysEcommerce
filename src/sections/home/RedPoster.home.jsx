@@ -10,7 +10,7 @@ const RedPoster = () => {
     <div>
       {/*  Poster Section 2 */}
       <div className="posterSection2">
-        <Link to="/shop/sale">
+        <Link to="/shop">
           <img
             style={{
               display: "block",

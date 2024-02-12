@@ -9,7 +9,7 @@ const PinkPoster = () => {
   return (
     <div>
       <div className="posterSectionOne">
-        <Link to="/shop/sale">
+        <Link to="/shop">
           <img
             style={{
               display: "block",
