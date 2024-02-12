@@ -34,6 +34,7 @@ const SignupForm = () => {
                 type="text"
                 id="firstName"
                 name="firstName"
+                placeholder="Enter First Name"
                 onChange={handleChange}
               />
             </div>
@@ -43,6 +44,7 @@ const SignupForm = () => {
                 type="text"
                 id="lastName"
                 name="lastName"
+                placeholder="Enter Last Name"
                 onChange={handleChange}
               />
             </div>
@@ -52,6 +54,7 @@ const SignupForm = () => {
                 type="email"
                 id="email"
                 name="email"
+                placeholder="Enter Email Address"
                 onChange={handleChange}
               />
             </div>
@@ -61,6 +64,7 @@ const SignupForm = () => {
                 type="password"
                 id="password"
                 name="password"
+                placeholder="Enter Password"
                 onChange={handleChange}
               />
             </div>

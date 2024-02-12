@@ -41,6 +41,7 @@ const Login = () => {
               type="email"
               id="email"
               name="email"
+              placeholder="Enter Email Address"
               onChange={handleChange}
             />
           </div>
@@ -50,6 +51,7 @@ const Login = () => {
               type="password"
               id="password"
               name="password"
+              placeholder="Enter Password"
               onChange={handleChange}
             />
           </div>
