@@ -121,7 +121,7 @@ const Cart = () => {
           </div>
           <div className={styles.subTotal}>
             <p>Subtotal :</p>
-            <p>INR {subTotal.toLocaleString()}</p>
+            <p>INR {subTotal.toLocaleString()}.00</p>
           </div>
           <button className={styles.pBtn}>Proceed To Checkout</button>
         </div>
