@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styles from "../styles/login.module.css";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { userLogin } from "../controllers/login.user";
-import { Alert, AlertIcon } from "@chakra-ui/react";
+import { UserContext } from "../contexts/detail.user.jsx";
 
 const Login = () => {
+  const { userDetail, setUserDetail } = useContext(UserContext);
   const [loginDetail, setLoginDetail] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,15 +18,20 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await userLogin(loginDetail);
-    console.log(loginDetail)
+    console.log("in login page",res)
+    if(res.success){
+      setUserDetail({...res.data,access:true})
+    }else{
+      setUserDetail({access:false})
+    }
     res && alert(res.message)
+    navigate("/")
 
   }
 
 
   return (
     <>
-      <Navbar />
       <div className={styles.container}>
         <h1>Log In</h1>
         <form onSubmit={handleSubmit}>
