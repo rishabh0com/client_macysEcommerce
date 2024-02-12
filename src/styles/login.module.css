@@ -1,0 +1,41 @@
+body{
+  max-width: 80%;
+}
+.container {
+  margin: 0 auto 0 auto;
+  text-align: center;
+  padding: 1.8rem;
+}
+.inputGroup {
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+}
+input {
+  width: 17rem;
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  border: 1px solid rgb(18, 18, 18);
+}
+
+
+.bt{
+  background-color: rgb(245, 5, 5);
+  color: white;
+  width: 18.4rem;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 3rem;
+}
+
+a {
+  color: rgb(35, 153, 216);
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.footer{
+    margin-top: 3rem;
+}

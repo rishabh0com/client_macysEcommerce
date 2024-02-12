@@ -1,0 +1,50 @@
+body{
+    max-width: 100%;
+}
+.container{
+    /* border: 2px solid goldenrod; */
+    width: 10rem;
+    height: 20rem;
+}
+.titleSecond, .titleFirst{
+    font-size: .9rem;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin:0px 0px 0px  0px;
+}
+.titleSecond{
+    margin: 0 0 1rem 0;
+}
+.image > img{
+    height: 12rem;
+    width: 100%;
+    max-width: 100%;
+}
+.fakePrice, .price{
+    margin:0;
+    font-weight: 600;
+}
+.price{
+    color:red;
+}
+
+@media (max-width: 768px) {
+    .container{
+        max-width: 100%;
+        height: 100%;
+        font-size: 70%;
+    }
+    .image > img{
+        height: 12rem;
+        width: 100%;
+        height: 50%;
+    }
+    .titleSecond, .titleFirst{
+        font-size: 75%;
+        margin: 0;
+    }
+    
+    
+}
