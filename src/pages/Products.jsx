@@ -1,19 +1,21 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { useLocation , useSearchParams} from "react-router-dom";
 import styles from "../styles/products.module.css";
 import Navbar from "../components/Navbar";
 import SingleProduct from "../components/SingleProduct.jsx";
 import { findAllProducts } from "../controllers/products.controller.js";
+import { UserContext } from "../contexts/detail.user.jsx";
 
 const Products = () => {
+  const {setLoading} = useContext(UserContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const search = useRef();
-  console.log("useRef", search.current);
+  // console.log("useRef", search.current);
   const location = useLocation();
-  console.log("useLocation", location);
+  // console.log("useLocation", location);
   let query = location.search.split("?")[1];
   search.current = query ? query : "";
-  console.log("searchQuery", search);
+  // console.log("searchQuery", search);
   const [proDataArray, setProData] = useState([]);
 
   const handleClick = (query) => () => {
@@ -23,17 +25,15 @@ const Products = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await findAllProducts(search.current);
-      //  console.log("es",response)
       setProData(response.data);
-      console.log(response);
+      // console.log(response);
     }
     fetchData();
-  }, [query, location]);
+  }, [location,setLoading]);
   // console.log("data",proDataArray)
 
   return (
     <>
-      <Navbar />
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <div className={styles.category}>
