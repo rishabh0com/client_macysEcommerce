@@ -1,25 +1,28 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from "react";
 
 // Create the UserContext
 export const UserContext = createContext();
 
 // Create the UserProvider component
 export const UserProvider = ({ children }) => {
-    const [userDetail, setUserDetail] = useState({
-        firstName:"",
-        lastName:"",
-        email:"",
-        password:"",
-    });
+  const [loading,setLoading] = useState(false);
+  const [userDetail, setUserDetail] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    access: false,
+  });
 
-    useEffect(() => {
-        console.log(userDetail);
-    }, [userDetail]);
+  console.log("loading",loading);
 
+  useEffect(() => {
+    console.log("user detail context",userDetail);
+  }, [userDetail]);
 
-    return (
-        <UserContext.Provider value={{ userDetail, setUserDetail}}>
-            {children}
-        </UserContext.Provider>
-    );
+  return (
+    <UserContext.Provider value={{ userDetail, setUserDetail, loading,setLoading }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
