@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import logoIcon from "/favicon.png";
 import cartIcom from "../../assets/cartIcon.png";
+import { UserContext } from "../../contexts/detail.user.jsx";
 // 1. Import
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 // 2. Use the `as` prop
 
 function SearchBar() {
+  const { userDetail } = useContext(UserContext);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const access = localStorage.getItem("access");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,7 +33,7 @@ function SearchBar() {
   if (window.innerWidth < 768) {
     // mobile viewport
     return (
-      <div style={{ margin: "0 .8rem 0" }}>
+      <div style={{ margin: "" }}>
         <div
           style={{
             display: "flex",
@@ -43,20 +46,19 @@ function SearchBar() {
             style={{
               display: "flex",
               alignItems: "center",
-              padding: "0.5rem",
             }}>
             <img
               src={logoIcon}
               alt="Logo"
               style={{ width: "2rem", height: "2rem", marginRight: "5px" }}
             />
-            <Link to="/" style={{textDecoration:"none",color:"black"}}>
+            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
               {" "}
               <p className="logo">mcay's</p>
             </Link>
           </div>
           <Link
-            to="/signup"
+            to={access ? "/account" : "/signup"}
             style={{
               display: "flex",
               height: "2.5rem",
@@ -69,19 +71,20 @@ function SearchBar() {
             }}>
             <div className="auth">Account</div>
           </Link>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              padding: "0.5rem",
-            }}>
-            <img
-              src={cartIcom}
-              alt="Cart Logo"
-              style={{ width: "2rem", height: "2rem", marginLeft: "5px" }}
-            />
-          </div>
+          <Link to="/shop/cart">
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                padding: "0.5rem",
+              }}>
+              <img
+                src={cartIcom}
+                alt="Cart Logo"
+                style={{ width: "2rem", height: "2rem", marginLeft: "5px" }}
+              />
+            </div>
+          </Link>
         </div>
         <div
           className="menuAndSearch"
@@ -97,7 +100,7 @@ function SearchBar() {
               display: "block",
               borderRadius: "30px",
               backgroundColor: "whiteSmoke",
-              width: "95%",
+              width: "100%",
               height: "2.7rem",
               margin: "auto",
             }}>
@@ -142,7 +145,7 @@ function SearchBar() {
     <div
       style={{
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         height: "5rem",
         width: "100%",
         alignItems: "center",
@@ -153,7 +156,7 @@ function SearchBar() {
           alt="Logo"
           style={{ width: "2rem", height: "2rem", marginRight: "5px" }}
         />
-        <Link to="/" style={{textDecoration:"none",color:"black"}}>
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
           {" "}
           <p className="logo">mcay's</p>
         </Link>
@@ -194,7 +197,7 @@ function SearchBar() {
         </div>
       </form>
       <Link
-        to="/signup"
+        to={access ? "/account" : "/signup"}
         style={{
           display: "flex",
           height: "2.5rem",
@@ -207,13 +210,20 @@ function SearchBar() {
         }}>
         <div className="auth">Account</div>
       </Link>
-      <div style={{ display: "flex", alignItems: "center", padding: "0.5rem" }}>
-        <img
-          src={cartIcom}
-          alt="Cart Logo"
-          style={{ width: "2rem", height: "2rem", marginLeft: "5px" }}
-        />
-      </div>
+      <Link to="/shop/cart">
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            padding: "0.5rem",
+          }}>
+          <img
+            src={cartIcom}
+            alt="Cart Logo"
+            style={{ width: "2rem", height: "2rem", marginLeft: "5px" }}
+          />
+        </div>
+      </Link>
     </div>
   );
 }
