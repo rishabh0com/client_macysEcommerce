@@ -24,6 +24,14 @@
     color: #777;
   }
 
+  .logout{
+    background-color: red;
+    width: 50%;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: .6rem ;
+  }
 @media (max-width: 768px) {
   .userInfo {
     width: 100%;
