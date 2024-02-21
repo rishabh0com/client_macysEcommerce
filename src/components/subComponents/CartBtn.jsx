@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../contexts/detail.user.jsx";
 import { findProductById } from "../../controllers/products.controller.js";
-import { tokens } from "../../controllers/login.user.js";
 const api = import.meta.env.VITE_API_URL;
 
 const CartBtn = ({ id, qyt }) => {
   const { loading, setLoading } = useContext(UserContext);
-  const { accessToken, refreshToken } = tokens;
+  const { accessToken, refreshToken } = JSON.parse(
+    localStorage.getItem("tokens")
+  );
   const productId = id;
   const quantity = qyt;
   const handleClick = async () => {

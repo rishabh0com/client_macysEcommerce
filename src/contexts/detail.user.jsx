@@ -4,8 +4,11 @@ import React, { createContext, useEffect, useState } from "react";
 export const UserContext = createContext();
 
 // Create the UserProvider component
+const { firstNameL, lastNameL, emailL } = JSON.parse(
+  localStorage.getItem("userInfo")
+);
 export const UserProvider = ({ children }) => {
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [userDetail, setUserDetail] = useState({
     firstName: "",
     lastName: "",
@@ -14,14 +17,12 @@ export const UserProvider = ({ children }) => {
     access: false,
   });
 
+  console.log("context", userDetail);
   // console.log("loading",loading);
 
-  useEffect(() => {
-    console.log("user detail context",userDetail);
-  }, [userDetail]);
-
   return (
-    <UserContext.Provider value={{ userDetail, setUserDetail, loading,setLoading }}>
+    <UserContext.Provider
+      value={{ userDetail, setUserDetail, loading, setLoading }}>
       {children}
     </UserContext.Provider>
   );

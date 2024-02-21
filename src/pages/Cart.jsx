@@ -11,9 +11,9 @@ const Cart = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-  const { accessToken, refreshToken } = JSON.parse(
-    localStorage.getItem("tokens")
-  );
+      const { accessToken, refreshToken } = JSON.parse(
+        localStorage.getItem("tokens")
+      );
       if (localStorage.getItem("access")) {
         const { userId } = JSON.parse(localStorage.getItem("userInfo"));
         const res = axios.get(`${api}/cart/find?userId=${userId}`, {
@@ -51,8 +51,8 @@ const Cart = () => {
             const lowerTitle = product.title.split(" ").slice(1).join(" ");
 
             return (
-              <>
-                <div key={index} className={styles.products}>
+              <div key={index}>
+                <div className={styles.products}>
                   <div className={styles.imgSection}>
                     <img
                       src={product.images}
@@ -95,7 +95,7 @@ const Cart = () => {
                 </div>
                 <hr />
                 {/* map end */}
-              </>
+              </div>
             );
           })}
         </div>
