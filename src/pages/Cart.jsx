@@ -14,6 +14,7 @@ const Cart = () => {
       const { accessToken, refreshToken } = JSON.parse(
         localStorage.getItem("tokens")
       );
+      console.log(accessToken);
       if (localStorage.getItem("access")) {
         const { userId } = JSON.parse(localStorage.getItem("userInfo"));
         const res = axios.get(`${api}/cart/find?userId=${userId}`, {
@@ -74,6 +75,10 @@ const Cart = () => {
                       </p>
                       <button
                         onClick={async () => {
+                          const { accessToken, refreshToken } = JSON.parse(
+                            localStorage.getItem("tokens")
+                          );
+
                           const res = await axios.delete(
                             `${api}/cart/delete/${item._id}`,
                             {
