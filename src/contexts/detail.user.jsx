@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
     access: false,
   });
 
-  console.log("loading",loading);
+  // console.log("loading",loading);
 
   useEffect(() => {
     console.log("user detail context",userDetail);

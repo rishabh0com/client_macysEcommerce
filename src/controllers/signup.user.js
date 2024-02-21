@@ -6,7 +6,7 @@ export const register = async (inputDetails) => {
     try {
         const res = await axios.post(`${api}/users/register`, inputDetails, { withCredentials: true });
         const resData = await res;
-        console.log("in register controller", resData);
+        // console.log("in register controller", resData);
         return resData.data;
     } catch (error) {
         if (error.response) {

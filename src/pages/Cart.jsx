@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/cart.module.css";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import { tokens } from "../controllers/login.user";
 const api = import.meta.env.VITE_API_URL;
 
 const Cart = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [cartsPro, setCartsPro] = useState([]);
-
+  const { accessToken, refreshToken } = tokens;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -16,8 +17,9 @@ const Cart = () => {
         const { userId } = JSON.parse(localStorage.getItem("userInfo"));
         const res = axios.get(`${api}/cart/find?userId=${userId}`, {
           withCredentials: true,
+          headers: { Authorization: `${accessToken},${refreshToken}` },
         });
-        console.log("called")
+        console.log("called");
         const resData = await res;
         setCartsPro(resData.data.data);
       } else {
@@ -75,6 +77,9 @@ const Cart = () => {
                             `${api}/cart/delete/${item._id}`,
                             {
                               withCredentials: true,
+                              headers: {
+                                Authorization: `${accessToken},${refreshToken}`,
+                              },
                             }
                           );
                           const resData = await res;
