@@ -3,7 +3,6 @@ import styles from "../styles/account.module.css";
 import { UserContext } from "../contexts/detail.user.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { tokens } from "../controllers/login.user.js";
 const api = import.meta.env.VITE_API_URL;
 
 const AccountPage = () => {
@@ -14,7 +13,10 @@ const AccountPage = () => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    const { accessToken, refreshToken } = tokens;
+    const { accessToken, refreshToken } = JSON.parse(
+      localStorage.getItem("tokens")
+    );
+
     try {
       localStorage.clear();
       const res = await axios.get(`${api}/users/logout`, {

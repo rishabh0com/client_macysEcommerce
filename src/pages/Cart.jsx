@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/cart.module.css";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { tokens } from "../controllers/login.user";
 const api = import.meta.env.VITE_API_URL;
 
 const Cart = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [cartsPro, setCartsPro] = useState([]);
-  const { accessToken, refreshToken } = tokens;
 
   useEffect(() => {
     const fetchProducts = async () => {
+  const { accessToken, refreshToken } = JSON.parse(
+    localStorage.getItem("tokens")
+  );
       if (localStorage.getItem("access")) {
         const { userId } = JSON.parse(localStorage.getItem("userInfo"));
         const res = axios.get(`${api}/cart/find?userId=${userId}`, {

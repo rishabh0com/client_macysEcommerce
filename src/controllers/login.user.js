@@ -1,10 +1,11 @@
 import axios from "axios";
 const api = import.meta.env.VITE_API_URL;
 
-export const tokens = JSON.parse(localStorage.getItem("tokens"));
 
+console.log("tokens", tokens);
 export const userLogin = async (details) => {
   // const {setUserDetail } = useContext(UserContext);
+
 
   try {
     console.log("in detail", details);
