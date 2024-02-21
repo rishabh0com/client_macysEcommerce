@@ -1,5 +1,4 @@
 import axios from "axios";
-import { tokens } from "./login.user";
 const api = import.meta.env.VITE_API_URL;
 
 // All prduct and product find by query
