@@ -7,9 +7,9 @@ const { accessToken, refreshToken } = tokens;
 export const findAllProducts = async (query) => {
     try {
         // console.log("product controller all")
-        const res = await axios.get(`${api}/products?${query}`, { withCredentials: true,headers:{Authorization:`${accessToken},${refreshToken}`} });
+        const res = await axios.get(`${api}/products?${query}`, { withCredentials: true });
         console.log("product controller all")
-        // console.log(res.data)
+        console.log(res.data)
         return await res.data
     } catch (error) {
         console.log("Error", error);
