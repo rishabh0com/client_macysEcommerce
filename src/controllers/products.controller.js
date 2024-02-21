@@ -19,11 +19,11 @@ export const findAllProducts = async (query) => {
 
 // this is for product page only
 export const findProductById = async (id) => {
+
+  try {
   const { accessToken, refreshToken } = JSON.parse(
     localStorage.getItem("tokens")
   );
-
-  try {
     const res = await axios.get(`${api}/products/${id}`, {
       withCredentials: true,
       headers: { Authorization: `${accessToken},${refreshToken}` },
