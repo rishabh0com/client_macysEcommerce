@@ -29,8 +29,8 @@ List the main features of your project. For example:
 
 ## Demo
 Include screenshots or a link to a live demo of your project. For example:
-![Demo Screenshot](![image](![image](https://github.com/rishabh0com/client_macysEcommerce/blob/main/src/assets/home.png))
-![Demo Screenshot](![image](![image](https://github.com/rishabh0com/client_macysEcommerce/blob/main/src/assets/login.png))
+![Demo Screenshot](![image](![image](https://github.com/rishabh0com/client_macysEcommerce/blob/main/src/assets/home.png)
+![Demo Screenshot](![image](![image](https://github.com/rishabh0com/client_macysEcommerce/blob/main/src/assets/login.png)
 
 <br>
 
