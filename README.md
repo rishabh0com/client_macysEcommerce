@@ -2,7 +2,7 @@
 
 <br>
 
-<a href="https://github.com/rishabh0com/server_macysEcommerce"><h2>Server -> </h2></a>
+<a href="https://github.com/rishabh0com/server_macysEcommerce"><h2>Server -> Click Here to visit Repository [here](https://weather-forecast-app-0723.netlify.app/).</h2></a>
 
 ## Table of Contents
 - [Introduction](#introduction)
