@@ -2,7 +2,7 @@
 
 <br>
 
-<a href="https://github.com/rishabh0com/server_macysEcommerce"><h2>Server -> Click Here to visit Repository [here](https://weather-forecast-app-0723.netlify.app/).</h2></a>
+<a href="https://github.com/rishabh0com/server_macysEcommerce"><h2>Server -> Click Here to visit Repository [here](https://github.com/rishabh0com/server_macysEcommerce).</h2></a>
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -14,15 +14,18 @@
 
 ## Introduction
 <pre>
-This project is a Weather App that provides live weather updates and a three-day forecast. 
-It aims to help users plan their activities by providing accurate weather information in a user-friendly interface.
+Welcome to Macy's eCommerce Clone! 
+This project replicates the functionality and design of the famous Macy's online store,
+using the MERN (MongoDB, Express.js, React, Node.js) stack.
 </pre>
 
 ## Features
 List the main features of your project. For example:
-- Live weather updates
-- Three-day weather forecast
-- User authentication
+- Full-fledged eCommerce platform
+- User authentication and authorization
+- Product catalog with categories
+- Shopping cart and checkout process
+- Responsive design for all devices
 
 ## Demo
 Include screenshots or a link to a live demo of your project. For example:
@@ -31,7 +34,7 @@ Include screenshots or a link to a live demo of your project. For example:
 
 <br>
 
-You can check out the live demo [here](https://weather-forecast-app-0723.netlify.app/).
+You can check out the live demo [here](https://client-macys-ecommerce.vercel.app/).
 <br>
 
 ## Technologies Used
