@@ -33,22 +33,25 @@ const Cart = () => {
   const subTotal = cartsPro.reduce((sum, pro) => {
     return sum + pro.product.product.price;
   }, 0);
-  console.log(subTotal);
+  // console.log(subTotal);
 
-  console.log("in cart", cartsPro);
+  // console.log("in cart", cartsPro);
 
   const handleclick = async (id) => {
+    console.log("id", id);
+    const userId = JSON.parse(localStorage?.getItem("userInfo"))?.userId;
+
     const { accessToken, refreshToken } = JSON.parse(
       localStorage.getItem("tokens")
     );
-    const res = await axios.delete(`${api}/cart/delete/${id}`, {
+    const res = await axios.delete(`${api}/cart/delete/?userId=${userId}&proId=${id}`, {
       withCredentials: true,
       headers: {
         Authorization: `${accessToken},${refreshToken}`,
       },
     });
     const resData = await res;
-    console.log(resData);
+    // console.log(resData);
     navigate(location.pathname, { replace: true });
   };
 
