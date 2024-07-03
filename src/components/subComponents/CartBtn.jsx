@@ -6,15 +6,16 @@ const api = import.meta.env.VITE_API_URL;
 
 const CartBtn = ({ id, qyt }) => {
   const { loading, setLoading } = useContext(UserContext);
-  const { accessToken, refreshToken } = JSON.parse(
-    localStorage.getItem("tokens")
-  );
   const productId = id;
   const quantity = qyt;
   const handleClick = async () => {
     // console.log(id, qyt, size, userId)
     if (localStorage.getItem("access")) {
-      const userId = JSON.parse(localStorage.getItem("userInfo")).userId;
+      const { accessToken, refreshToken } = JSON.parse(
+        localStorage.getItem("tokens")
+      );
+
+      const userId = JSON.parse(localStorage?.getItem("userInfo"))?.userId;
       const access = localStorage.getItem("access");
       try {
         if (access) {

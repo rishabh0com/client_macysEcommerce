@@ -21,12 +21,12 @@ export const findAllProducts = async (query) => {
 export const findProductById = async (id) => {
 
   try {
-  const { accessToken, refreshToken } = JSON.parse(
-    localStorage.getItem("tokens")
-  );
+  // const { accessToken, refreshToken } = JSON.parse(
+  //   localStorage.getItem("tokens")
+  // );
     const res = await axios.get(`${api}/products/${id}`, {
       withCredentials: true,
-      headers: { Authorization: `${accessToken},${refreshToken}` },
+      // headers: { Authorization: `${accessToken},${refreshToken}` },
     });
     console.log("product controller id is caled");
     return await res.data;

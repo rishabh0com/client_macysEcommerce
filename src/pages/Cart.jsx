@@ -21,7 +21,7 @@ const Cart = () => {
           withCredentials: true,
           headers: { Authorization: `${accessToken},${refreshToken}` },
         });
-        console.log("called");
+        // console.log("called");
         const resData = await res;
         setCartsPro(resData.data.data);
       } else {
@@ -36,6 +36,21 @@ const Cart = () => {
   console.log(subTotal);
 
   console.log("in cart", cartsPro);
+
+  const handleclick = async (id) => {
+    const { accessToken, refreshToken } = JSON.parse(
+      localStorage.getItem("tokens")
+    );
+    const res = await axios.delete(`${api}/cart/delete/${id}`, {
+      withCredentials: true,
+      headers: {
+        Authorization: `${accessToken},${refreshToken}`,
+      },
+    });
+    const resData = await res;
+    console.log(resData);
+    navigate(location.pathname, { replace: true });
+  };
 
   return (
     <div className={styles.cartContainer}>
@@ -74,24 +89,7 @@ const Cart = () => {
                         Total INR {`${product.price.toLocaleString()}.00`}
                       </p>
                       <button
-                        onClick={async () => {
-                          const { accessToken, refreshToken } = JSON.parse(
-                            localStorage.getItem("tokens")
-                          );
-
-                          const res = await axios.delete(
-                            `${api}/cart/delete/${item._id}`,
-                            {
-                              withCredentials: true,
-                              headers: {
-                                Authorization: `${accessToken},${refreshToken}`,
-                              },
-                            }
-                          );
-                          const resData = await res;
-                          console.log(resData);
-                          navigate(location.pathname, { replace: true });
-                        }}
+                        onClick={() => handleclick(product._id)}
                         className={styles.remove}>
                         Remove
                       </button>
