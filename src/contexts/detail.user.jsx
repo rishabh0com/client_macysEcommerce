@@ -4,9 +4,9 @@ import React, { createContext, useEffect, useState } from "react";
 export const UserContext = createContext();
 
 // Create the UserProvider component
-const { firstNameL, lastNameL, emailL } = JSON.parse(
-  localStorage.getItem("userInfo")
-);
+// const { firstNameL, lastNameL, emailL } = JSON?.parse(
+//   localStorage?.getItem("userInfo")
+// );
 export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [userDetail, setUserDetail] = useState({
